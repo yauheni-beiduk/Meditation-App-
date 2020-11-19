@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Meditation App</title>
 </head>
 <body>
     <div class="app">
-
+        <div class="main"><p>Hello, let's enjoy beautiful videos and sounds</p></div>
         <div class="vid-container">
             <video loop>                 //start again and again
                 <source src="video/les.mp4" type="video/mp4">
             </video>
         </div>
-
         <div class="time-select">
             <button data-time="120">2 minutes</button>
             <button data-time="300">5 minutes</button>
@@ -42,8 +43,6 @@
             </button>
         </div>
     </div>
-
-
     <script src="main.js"></script>
 </body>
 </html>
