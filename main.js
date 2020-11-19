@@ -21,8 +21,8 @@ const app = () => {
 
     let fakeDuration = 600;
 
-    outline.style.strokeDasharray = outlineLength;  // chertochki for svg form
-    outline.style.strokeDashoffset = outlineLength;
+    outline.style.strokeDasharray = outlineLength;  // chertochki for svg form (risovanie formy figury)
+    outline.style.strokeDashoffset = outlineLength; //opredeljaet mestopolozhenie vdolj pyti svg
 
     //PICK DIFFERENT SOUNDS
 
@@ -76,7 +76,7 @@ const app = () => {
 
         let progress = outlineLength - (currentTime / fakeDuration) * outlineLength;
         outline.style.strokeDashoffset = progress;
-        
+
         // ANIMATE THE TEXT
 
         timeDisplay.textContent = `${0}${minutes}:${seconds}`
