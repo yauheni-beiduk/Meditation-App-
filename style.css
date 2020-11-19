@@ -76,13 +76,11 @@ video {
     padding: 30px;
 }
 
-.sound-picker button:nth-child(1) {
-    background: rgb(97, 77, 77);
+.sound-picker button:hover {
+    color: black;
+    background: white;
 }
 
-.sound-picker button:nth-child(2) {
-    background: rgb(99, 75, 75);
-}
 
 .sound-picker button img {
     height: 100%;
