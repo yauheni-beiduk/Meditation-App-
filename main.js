@@ -5,19 +5,27 @@ const app = () => {
     const video = document.querySelector('.vid-container video');
 
     //  SOUNDS
+
     const sounds = document.querySelectorAll('.sound-picker button');
+
     // TIME DISPLAY 
+
     const timeDisplay = document.querySelector('.time-display');
     const timeSelect = document.querySelectorAll('.time-select button');
+
     // GET THE LENGTH OFF THE OUTLINE
+
     const outlineLength = outline.getTotalLength();
+
     // DURATION
+
     let fakeDuration = 600;
 
     outline.style.strokeDasharray = outlineLength;  // chertochki for svg form
     outline.style.strokeDashoffset = outlineLength;
 
     //PICK DIFFERENT SOUNDS
+
     sounds.forEach(sound => {
         sound.addEventListener('click', function() {
             song.src = this.getAttribute('data-sound');
@@ -27,11 +35,13 @@ const app = () => {
     });
 
     // PLAY SOUNDS
+
     play.addEventListener('click', () => {
         checkPlaying(song);
     });
     
-    //SELECT SOUND
+    //SELECT TIMES
+
     timeSelect.forEach(option => {
         option.addEventListener('click', function() {
             fakeDuration = this.getAttribute('data-time');
@@ -39,7 +49,8 @@ const app = () => {
         });
     });
 
-    // CREATE A FUNCTION SPECIFIC TO STOP AND PLAY THE SOUNDS
+    // CREATE A FUNCTION SPECIFIC TO STOP AND PLAY THE SOUNDS AND VIDEOS
+
     const checkPlaying = song => {
     if(song.paused) {
         song.play();
@@ -53,6 +64,7 @@ const app = () => {
     };
 
 
+
   // ANIMATED CIRCLE TO TIMES
     song.ontimeupdate = () => {
         let currentTime = song.currentTime;
@@ -61,17 +73,23 @@ const app = () => {
         let minutes = Math.floor(elapsed / 60);
 
         // ANIMATE CIRCLE
+
         let progress = outlineLength - (currentTime / fakeDuration) * outlineLength;
         outline.style.strokeDashoffset = progress;
+        
         // ANIMATE THE TEXT
-        timeDisplay.textContent = `${minutes}:${seconds}`;
 
+        timeDisplay.textContent = `${0}${minutes}:${seconds}`
         if(currentTime >= fakeDuration) {
             song.pause();
             song.currentTime = 0;
             play.src = 'images/play.svg';
             video.pause();
         }
+
     };
 };
+
+// RUN FUNCTION
+
 app();
