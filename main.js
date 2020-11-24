@@ -45,9 +45,11 @@ const app = () => {
     timeSelect.forEach(option => {
         option.addEventListener('click', function() {
             fakeDuration = this.getAttribute('data-time');
-            timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(fakeDuration % 60)} `;
+            timeDisplay.textContent =`${Math.floor(fakeDuration / 60)}:${Math.floor(fakeDuration % 60)} `;
         });
     });
+
+
 
     // CREATE A FUNCTION SPECIFIC TO STOP AND PLAY THE SOUNDS AND VIDEOS
 
@@ -78,9 +80,11 @@ const app = () => {
         outline.style.strokeDashoffset = progress;
 
         // ANIMATE THE TEXT
-
-        timeDisplay.textContent = `${0}${minutes}:${seconds}`
-        if(currentTime >= fakeDuration) {
+if (seconds < 10 && minutes < 10 ) {
+    timeDisplay.textContent = `${0}${minutes}:${0}${seconds}`;
+} else {
+        timeDisplay.textContent = `${minutes}:${seconds}`;}
+        if(currentTime >=fakeDuration) {
             song.pause();
             song.currentTime = 0;
             play.src = 'images/play.svg';
@@ -93,3 +97,4 @@ const app = () => {
 // RUN FUNCTION
 
 app();
+
