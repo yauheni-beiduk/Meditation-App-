@@ -21,8 +21,8 @@ const app = () => {
 
     let fakeDuration = 600;
 
-    outline.style.strokeDasharray = outlineLength;  // chertochki for svg form (risovanie formy figury)
-    outline.style.strokeDashoffset = outlineLength; //opredeljaet mestopolozhenie vdolj pyti svg
+    outline.style.strokeDasharray = outlineLength;  //  for svg form (draw form figure)
+    outline.style.strokeDashoffset = outlineLength; //determine location along the path svg
 
     //PICK DIFFERENT SOUNDS
 
